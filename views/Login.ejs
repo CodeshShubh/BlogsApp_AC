@@ -6,6 +6,15 @@
     <title>Login</title>
 </head>
 <body>
+    <% if (Message) { %>
+      <p><%=Message%></p>
+    <% } %>
     <h1>Login Page</h1>
+    <form method="POST" action="/user/login">
+        <input type="email" name="email" required placeholder="Enter Email"/>
+        <input type="password" name="password" required placeholder="Enter Password"/>
+        <input type="submit" value="Login"/>
+    </form>
+ <p>Don't have an account?<a href="/signup">Signup here</a></p>
 </body>
 </html>

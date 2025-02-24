@@ -7,11 +7,21 @@
 </head>
 <body>
     <h1>Signup Page</h1>
-    <form method="POST" action="/register">
+    <form method="POST" action="/user/register">
         <input type="text" name="name" required placeholder="Enter Name"/>
         <input type="email" name="email" required placeholder="Enter email"/>
         <input type="password" name="password" required placeholder="Enter password"/>
         <input type="submit" value="Submit"/>
     </form>
+  <p >
+    Already have an account?
+    <a href="/login">Login</a></p>
+    <script>
+        let message = '<%=Message%>'
+        if(message){
+            alert(message)
+        }
+    </script>
+    
 </body>
 </html>
