@@ -1,0 +1,18 @@
+<div class="topBar">
+  <div class="tabs">
+    <p><a href="/">Home</a></p>
+
+    <% if (isAuthenticated) { %>
+    <p><a href="/blog/myblogs">My Blogs</a></p>
+    <% } %>
+  </div>
+  <div class="tab_btns"> 
+    <% if (isAuthenticated) { %>
+    <form action="/user/logout" method="post">
+      <button>Logout</button>
+    </form>
+    <% }else { %>
+    <button><a href="/login">Login</a></button>
+    <%}%>
+  </div>
+</div>

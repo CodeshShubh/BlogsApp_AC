@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <%- include('./partials/Userstyle.ejs')  %>
 </head>
 <body>
-    <h1>Home Page</h1>
-    <% if (Message) { %>
-     <p><%=Message %></p>
+<%- include('./partials/topBar.ejs')  %>
+
+<div class="blogs">
+    <% if (blogs && blogs.length > 0) { %>
+      <% blogs.forEach(blog => { %>
+        <div class="blog">
+          <h2><%= blog.title %></h2>
+          <p><%= blog.content %></p>
+          <small>
+            Author: <%= blog.author %>
+            <% if (blog.user && blog.user.name) { %>
+              (<%= blog.user.name %>)
+            <% } %>
+          </small>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p>No blogs available.</p>
     <% } %>
+  </div>
+
+
 </body>
 </html>

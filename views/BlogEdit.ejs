@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Blog</title>
+  <%- include('./partials/Userstyle.ejs') %>
+</head>
+<body>
+  <%- include('./partials/topBar.ejs') %>
+  <h1>Edit Blog</h1>
+  <form method="POST" action="/blog/editblog/<%= blog._id %>">
+    <input type="text" name="title" value="<%= blog.title %>" required>
+    <textarea name="content" required><%= blog.content %></textarea>
+    <input type="text" name="author" value="<%= blog.author %>" required>
+    <button type="submit">Update Blog</button>
+  </form>
+</body>
+</html>

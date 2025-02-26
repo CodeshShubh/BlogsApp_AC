@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Blog</title>
+  <%- include('./partials/Userstyle.ejs') %>
+</head>
+<body>
+  <%- include('./partials/topBar.ejs') %>
+  <h1>Add New Blog</h1>
+  <form method="POST" action="/blog/addblog">
+    <input type="text" name="title" placeholder="Enter Title" required>
+    <textarea name="content" placeholder="Enter Blog Content" required></textarea>
+    <input type="text" name="author" placeholder="Enter Author Name" required>
+    <button type="submit">Add Blog</button>
+  </form>
+</body>
+</html>
